@@ -1,0 +1,220 @@
+@import '_other.scss';
+@import '_colors.scss';
+@import '../node_modules/swiper/swiper.scss';
+
+header{
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  nav{
+   
+    @include myContainer;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gray;
+
+    div:first-child{
+      font-weight: bolder;
+      font-size: 2rem;
+      position: relative;
+      z-index: 100;
+
+      @media (max-width: $lg) {
+        font-size: 1.7rem;
+      }
+    }
+  }
+  
+}
+
+#nav-menu{
+  position: static;
+  ul{
+    display: flex;
+    gap: 20px;
+    li{
+      list-style: none;
+      a{
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+#ham{
+  display: none;
+  background-color: transparent;
+  border:none;
+  position: relative;
+  z-index: 100;
+
+  img{
+    width: 2.6rem;
+    height: 1.5rem;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: $xl){
+  #nav-menu{
+    position: absolute;
+    top: 0;
+    left: 0-100%;
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+
+    ul{
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+
+    }
+  }
+  #ham{
+    display: block;
+  }
+
+}
+
+#home{
+  background-image: url('../public/bg-masthead.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.homeSection{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  -z-index: -50;
+}
+.overlay{
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  filter: blur(10px);
+}
+.homeTitle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+    color: transparent;
+    background-image: linear-gradient(to bottom,  #0000 ,  #8f8f8f , #eeee , #eee);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@media (max-width: $lg){
+  .homeTitle{
+    font-size: 3.5rem;
+  }
+
+}
+
+  
+
+
+.second{
+  font-size: 15px;
+  width: 450px;
+  text-align: center;
+}
+#about{
+  margin-top: 5rem;
+  height: 100%;
+  border-bottom: 2px solid;
+  padding-bottom: 4rem;
+}
+.aboutContainer{
+  width: 100%;
+  @include myContainer;
+}
+.abouttitle{
+  font-size: 5rem;
+  font-weight: bold;
+  background-clip: text;
+  background-image: linear-gradient(to top, #000000 , #ffff);
+  color: transparent;
+}
+.aboutmist{
+  font-size: 1.7rem;
+  text-align: center;
+}
+.newsgray{
+  width: 100%;
+  height: 400px;
+  background-color: rgb(179, 175, 175);
+  margin-top: 400px;
+  position: relative;
+  @include myContainer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newscard{
+  width: 25rem;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px  7px  10px gray;
+  border-radius: 5px;
+}
+.cardimg1{
+  width: 25rem;
+  height: 15rem;
+  object-fit: cover;
+}
+.cardtext{
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 2rem 1rem ;
+}
+.cardButton{
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  border: none;
+
+
+}
+.swiper{
+  padding-bottom: 2rem !important;
+}
+.swiper-slide{
+  width: fit-content !important;
+  justify-content: center;
+  align-items: center;
+}
